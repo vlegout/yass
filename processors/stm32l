@@ -1,0 +1,49 @@
+{
+	"name": "STM32L ARM Cortex-M3 32-bit RISC",
+	"speeds":
+	[
+		{
+			"speed": 1.0,
+			"consumption": 1.0
+		},
+		{
+			"speed": 0.5,
+			"consumption": 0.43
+		},
+		{
+			"speed": 0.25,
+			"consumption": 0.217
+		},
+		{
+			"speed": 0.125,
+			"consumption": 0.126
+		},
+		{
+			"speed": 0.0625,
+			"consumption": 0.065
+		},
+		{
+			"speed": 0.03125,
+			"consumption": 0.035
+		}
+	],
+	"states":
+	[
+		{
+			"consumption": 0.24,
+			"penalty": 1.0
+		},
+		{
+			"consumption": 0.005,
+			"penalty": 34.0
+		},
+		{
+			"consumption": 0.0004,
+			"penalty": 53.0
+		},
+		{
+			"consumption": 0.00015,
+			"penalty": 100.0
+		}
+	]
+}

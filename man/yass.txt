@@ -1,0 +1,115 @@
+yass(1)
+=======
+
+NAME
+----
+yass - Yet Another Scheduling Simulator
+
+SYNOPSIS
+--------
+*yass* [OPTIONS]
+
+DESCRIPTION
+-----------
+Yass is a real-time scheduling simulator. It simulates various
+real-time algorithms for real-time systems.
+
+Configuration files must follow the json format. Please see the
+*yass.configuration(5)* manpage for more information.
+
+Yass comes with yass-draw to draw the schedule. See its manpage for
+additional information.
+
+OPTIONS
+-------
+--context-switches::
+	Display the number of context switches per processor.
+
+-c <file>::
+--cpu=<file>::
+	Read the processor configuration from the given file.
+
+--deadline-misses::
+	Display the number of deadline misses per scheduler.
+
+-d <file>::
+--data=<file>::
+	Use the content of the given file to create the task set.
+
+-e::
+--energy::
+	Print on stdout statistics about the consumption of each cpu.
+
+-i::
+--idle::
+	Print on stdout statistics about processor idle periods.
+
+-j <n>::
+--jobs=<n>::
+	Number of threads to run. (default: 1).
+
+-n <n>::
+--n-cpus=<n>::
+	Use <n> cpus. (default 3)
+
+-o <file>::
+--output=<file>::
+	Store output information to the given file. (default:
+	output.txt)
+
+-s <file>::
+--scheduler=<file>::
+	The scheduler to use. The given file must be a shared object
+	and must contain at least three symbols: offline, schedule and
+	close. This file will be opened using dlopen(3). Multiple
+	schedulers can be used.
+
+-v::
+--verbose::
+	Be more verbose.
+
+-V::
+--version::
+	Print version number.
+
+-t <n>::
+--ticks=<n>::
+	Run each scheduler for <n> ticks. (default: 8001)
+
+EXAMPLES
+--------
+To simulate an EDF schedule with one processor for the task set
+defined in /usr/share/yass/data/default and then generate a file
+called output.pdf with the result, run:
+
+ yass -s edf -n 1 -d /usr/share/yass/data/default
+ yass-draw
+
+SCHEDULERS
+----------
+The following schedulers come with yass (default: fcfs):
+
+Monoprocessor:
+edf
+rm
+
+Multiprocessor:
+bf
+fork
+gangedf
+gedf
+pd
+pedf
+pf
+
+Both:
+fcfs
+llf
+
+SEE ALSO
+--------
+*yass-draw(1)*, *yass.interfaces(5)*, *yass.configuration(5)*
+
+BUGS
+----
+Report bugs to Vincent Legout <vincent@legout.info>

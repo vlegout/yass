@@ -1,0 +1,25 @@
+{
+	"name": "PPC",
+	"speeds":
+	[
+		{
+			"speed": 1.0,
+			"consumption": 1.0
+		}
+	],
+	"states":
+	[
+		{
+			"consumption": 0.24,
+			"penalty": 5.0
+		},
+		{
+			"consumption": 0.005,
+			"penalty": 50.0
+		},
+		{
+			"consumption": 0.0004,
+			"penalty": 1000.0
+		}
+	]
+}

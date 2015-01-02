@@ -1,0 +1,25 @@
+{
+	"name": "Generic processor",
+	"speeds":
+	[
+		{
+			"speed": 1.0,
+			"consumption": 1.0
+		}
+	],
+	"states":
+	[
+		{
+			"consumption": 0.5,
+			"penalty": 1.0
+		},
+		{
+			"consumption": 0.1,
+			"penalty": 20.0
+		},
+		{
+			"consumption": 0.0000001,
+			"penalty": 100.0
+		}
+	]
+}

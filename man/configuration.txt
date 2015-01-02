@@ -1,0 +1,65 @@
+yass.configuration(5)
+=====================
+
+NAME
+----
+yass.configuration - yass configuration files
+
+DESCRIPTION
+-----------
+This man page documents how yass configuration files must be
+formatted. There are two types of configuration files: to describe a
+task set and a processor.
+
+Configuration files must use json.
+
+TASK SET
+--------
+The file must contain a array named "tasks", and each entry in this
+array is a task. A task can be specified with the following fields
+(*bold* fields are mandatory):
+
+- *id*: Id of the task. Must be an integer.
+
+- *wcet*: Worst Case Execution Time of the task. Must be an integer
+  greater than 20 (YASS_MIN_WCET in libyass/common.h). Must be less
+  than the deadline and the period.
+
+- deadline: Deadline of the task. Must be an integer. If not
+  specified, the deadline is equal to the period.
+
+- *period*: Period of the task. Must be an integer.
+
+- delay: If this field is greater than 0, the task will not start at
+  tick = 0 but when tick = delay.
+
+- threads: Number of threads for the task. (Default: 1).
+
+- segments: Used by the forkjoin task model. Must be an array
+  containing multiple wcet entries (Default: NULL).
+
+- parallel: Also used by the forkjoin task model, number of threads to
+  run in parallel. (Default: -1).
+
+PROCESSOR
+---------
+This file must contain at least one field, the _name_ of
+processor. There are two other fields, for available speeds and low
+power states.
+
+The _speed_ field is an array. Each element of the array must contain
+two fields, one is speed (a float between 0 and 1) and the other is
+consumption (also a float between 0 and 1).
+
+The _states_ field is an array, each element of the array must contain
+two fields, on is consumption (a float between 0 and 1 and the other
+is penalty (integer, count the number of ticks required to wake the
+processor up).
+
+SEE ALSO
+--------
+*yass(1)*
+
+BUGS
+----
+Report bugs to Vincent Legout <vincent@legout.info>

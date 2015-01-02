@@ -1,0 +1,47 @@
+{
+	"tasks":
+	[
+		{
+			"id": 1,
+			"deadline": 1200,
+			"period": 1200,
+			"parallel": 2,
+			"segments":
+			[
+				{
+					"wcet": 400
+				},
+				{
+					"wcet": 200
+				},
+				{
+					"wcet": 100
+				}
+			]
+		},
+		{
+			"id": 2,
+			"deadline": 800,
+			"period": 800,
+			"parallel": 1,
+			"segments":
+			[
+				{
+					"wcet": 300
+				}
+			]
+		},
+		{
+			"id": 3,
+			"deadline": 700,
+			"period": 700,
+			"parallel": 1,
+			"segments":
+			[
+				{
+					"wcet": 400
+				}
+			]
+		}
+	]
+}

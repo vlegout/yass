@@ -1,0 +1,29 @@
+YASS
+=====
+
+yass is a real-time scheduling simulator and stands for Yet Another
+Scheduling Simulator. It is written in C and is released under the
+GPL-2 license.
+
+Building and installation
+-------------------------
+
+You need cairo and libjansson to build yass. With Debian and its
+derivatives, installing the following packages should be enough:
+
+ libcairo2-dev
+ libjansson-dev
+
+If you obtained yass from a tarball, you should be able to build it
+with the following commands:
+
+ ./configure
+ make
+
+If there is no configure file, you may want to run ./autogen.sh.
+
+Running
+-------
+
+For more information on how to run yass, please have a look at the
+manpages.

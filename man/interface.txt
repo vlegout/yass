@@ -1,0 +1,63 @@
+yass.interface(5)
+=================
+
+NAME
+----
+yass.interface - yass output formats
+
+DESCRIPTION
+-----------
+This manpage documents the file format used by yass and yass-draw.
+
+DRAW
+----
+
+The file format should provide enough information to draw the schedule
+timeline. It is event based and each event can provide up to five
+arguments (each argument must be an integer). The list of known events
+is stored in the yass_events enumeration in the libyass/common.h
+file. Below is a description of each event.
+
+- Task Release. Indicate when a task is released. Contains two
+  arguments, the id of the released task and the tick when the task is
+  released.
+
+- Task Deadline. Indicate when a task reaches its deadline. Contains
+  two arguments, the id of the task and the tick when the task reaches
+  its deadline.
+
+- Task Run. Indicate when a task starts its execution on a given
+  processor. If the task is preempted from another processor, the
+  event must be activated to indicate on which processor the task now
+  runs. Contains four arguments, the index of the scheduler used, the
+  id of the task, the tick and the processor.
+
+- Task Terminate. Indicate when a task finishes its execution on a
+  given processor. It could be because the task reaches its WCET or
+  because the task has been preempted. Contains four arguments, the
+  index of the scheduler used, the id of the task, the tick and the
+  processor.
+
+- Cpu Speed. Indicate that a processor changes its speed. Contains
+  three arguments, the index of the scheduler used, the processor and
+  the new speed (between 0 and 100).
+
+- Cpu Mode. Indicate that a processor changes its mode of
+  operation. Contains three arguments, the index of the scheduler
+  used, the processor and the new mode. Active mode are integers
+  greater than or equal to 0 and mode less than 0 are inactive mode
+  (see YASS_CPU_MODE_NORMAL and YASS_CPU_MODE_WAKEUP in
+  libayss/common.h).
+
+- Cpu Consumption. Indicate that the processor consumption
+  changes. Contains four arguments, the index of the scheduler used,
+  the processor, the new consumption (between 0 and 100) and the tick
+  indicating when the update takes place.
+
+SEE ALSO
+--------
+*yass(1)*, *yass-draw(1)*
+
+BUGS
+----
+Report bugs to Vincent Legout <vincent@legout.info>

@@ -1,0 +1,30 @@
+{
+	"name": "Intel XScale PXA270",
+	"speeds":
+	[
+		{
+			"speed": 1.0,
+			"consumption": 1.0
+		},
+		{
+			"speed": 0.83,
+			"consumption": 0.81
+		},
+		{
+			"speed": 0.67,
+			"consumption": 0.62
+		},
+		{
+			"speed": 0.5,
+			"consumption": 0.41
+		},
+		{
+			"speed": 0.33,
+			"consumption": 0.30
+		},
+		{
+			"speed": 0.17,
+			"consumption": 0.13
+		}
+	]
+}

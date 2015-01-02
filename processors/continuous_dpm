@@ -1,0 +1,14 @@
+{
+	"name": "Basic processor with continuous speeds",
+	"states":
+	[
+		{
+			"consumption": 0.0004,
+			"penalty": 8
+		},
+		{
+			"consumption": 0.00015,
+			"penalty": 50
+		}
+	]
+}

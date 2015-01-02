@@ -1,0 +1,85 @@
+yass-draw(1)
+============
+
+NAME
+----
+yass-draw - Yet Another Scheduling Simulator
+
+SYNOPSIS
+--------
+*yass-draw* [OPTIONS]
+
+DESCRIPTION
+-----------
+Draw the schedule using yass output file. It generates one file with
+one scheduler output per page.
+
+OPTIONS
+-------
+-c::
+--cpu::
+	Only draw the cpu, not the tasks.
+
+-d::
+--disable-dpm::
+	Do not draw processors wake-up penalties.
+
+-f::
+--disable-frequency::
+	Do not draw the frequency scale.
+
+-h <height>::
+--height=<height>::
+	Height of each task and each processor (default: 60, min: 40,
+	max:200).
+
+-i <file>::
+--input=<file>::
+	Input file. (default: output.txt)
+
+-l::
+--legend::
+	Do not print tasks and processors ids.
+
+--line-above-cpus::
+	Draw a dashed line between tasks and cpus.
+
+-o <file>::
+--output=<file>::
+	Output file. (default: output.pdf)
+
+-p::
+--one-page::
+	Output everything in one single page instead of one scheduler
+        per page.
+
+-t <n>::
+--ticks=<n>::
+	Draw execution until tick <n>. (default: -1, draw everything)
+
+-s <n>::
+--scale=<n>::
+	Time scale, must be 0, 1 or 2. (default: 0). If 1, time scale
+        is divided by 10 and if 2, divided by 100.
+
+--pdf::
+	Output pdf file (default).
+
+--png::
+	Output png file.
+
+--ps::
+	Output ps file.
+
+--svg::
+	Output svg file.
+
+Note: Only one output format is supported.
+
+SEE ALSO
+--------
+*yass(1)*, *yass.interfaces(5)*
+
+BUGS
+----
+Report bugs to Vincent Legout <vincent@legout.info>
