@@ -114,4 +114,4 @@ sp_la_SOURCES = sp.c
 
 uedf_la_SOURCES = uedf.c
 
-EXTRA_DIST = lpdpm.hpp
+EXTRA_DIST = lpdpm.hpp csf.h
